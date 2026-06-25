@@ -1,117 +1,1511 @@
-* {
+*{
   box-sizing: border-box;
 }
 html {
-  height: 100%;
+  min-height: 100%;
 }
-body {
+
+body{
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   background-color: #ffffff;
   font-family: 'Arial Narrow';
-  font-size: 1.6vw;
+  font-size: 1.7vw;
+  position: relative;
+  isolation: isolate;
+  margin: 0;
 }
 
 .mainMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   display: flex;
+  justify-content: space-between;
   width: 100%;
   padding: 1.7vw 4.6vw;
-  border-radius: 2vw;
-  justify-content: space-between;
 }
-.mainMenuLink {
-  font-size: 1.6vw;
+
+.h2{
+  font-size: 3.3vw;
+}
+
+.h3{
+  font-size: 2.2vw;
+}
+
+.h4{
+  font-size: 1.7vw;
+}
+
+
+.mainMenuLink{
   color: #222;
   text-decoration: none;
   transition: all ease 0.6s;
 }
-.mainMenuLink.active {
-  color: #e90065;
+.mainMenuLink.active{
+  color: #FD229E;
 }
-.mainMenuLink.active:hover {
-  color: #e90065;
+.mainMenuLink.active:hover{
+  color: #FD229E;
 }
-.mainMenuLink:hover {
+.mainMenuLink:hover{
   color: #777;
+  text-decoration: underline;
 }
 
-h1{
-  padding: 0 4.6vw;
+
+.kirwoodFirstScreenWrapper{
+  width: 100%;
+  padding: 8vw 20vw 0;
 }
 
-.cards {
+.kirwoodFirstScreen {
+  width: 100%;
+  aspect-ratio: 832 / 540;
+  background-image: url("../images/kirwoodFirstScreen.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.7s ease;
+}
+.kirwoodFirstScreen:hover {
+  transform: scale(1.02) rotate(0.7deg);
+}
+
+
+.buttonFirstScreen{
+  position: absolute;
+  top: 35vw;
+  left: 22vw;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 21vw;
+  aspect-ratio: 268 / 64;
+  background-image: url("../images/buttonBg1.svg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  color: #000;
+  text-decoration: none;
+}
+.buttonFirstScreen span{
+  transform: translateY(-0.3vw);
+}
+
+.aboutTextWrapper {
+  position: relative;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  padding-top: 17vw;
+}
+
+.aboutText {
+  width: 44vw;
+  text-align: justify;
+  animation: textScroll linear both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 45%;
+}
+
+.screen2png {
+  position: absolute;
+  width: 6vw;
+  aspect-ratio: 80 / 42;
+  pointer-events: auto;
+  scale: 1;
+  transition: scale 0.4s ease;
+}
+.screen2png:hover {
+  scale: 1.15;
+}
+
+.screen2png1 {
+  top: 12vw;
+  left: 15vw;
+  animation: float1 4s ease-in-out infinite;
+}
+
+.screen2png2 {
+  top: 20vw;
+  left: 8vw;
+  animation: float2 5s ease-in-out infinite;
+}
+
+.screen2png3 {
+  top: 11vw;
+  right: 16vw;
+  animation: float3 4.5s ease-in-out infinite;
+}
+
+.screen2png4 {
+  top: 23vw;
+  right: 8vw;
+  animation: float1 5.5s ease-in-out infinite;
+}
+
+.screen2png5 {
+  top: 34vw;
+  left: 48vw;
+  animation: float2 4.8s ease-in-out infinite;
+}
+
+.posterHeadlineWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 17vw;
+  padding-bottom: 17vw;
+  animation: posterWrapperSpacing linear both;
+  animation-timeline: view();
+  animation-range: entry 65% cover 70%;
+}
+
+.posterHeadline {
+  width: 16vw;
+  aspect-ratio: 224 / 146;
+  object-fit: contain;
+  animation: posterHeadlineScale linear both;
+  animation-timeline: view();
+  animation-range: entry 65% cover 70%;
+}
+
+
+
+.posterBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3vw;
+  width: 100%;
+  padding: 0 5vw 17vw;
+}
+
+.surokPoster{
+  width: 42vw;
+  aspect-ratio: 609 / 283;
+}
+.surokPoster:hover {
+  animation: surokPosterSwing 3.5s ease-in-out infinite;
+}
+
+.posterBlockText {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2vw;
+}
+
+.posterBlockTitle{
+  text-align: justify;
+}
+.posterBlockTitle1{
+  font-style: italic;
+  text-decoration: underline;
+  transition: color 0.4s ease;
+}
+.posterBlockTitle1:hover {
+  color: #FD229E;
+}
+
+
+
+.guestbookPreview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 4vw;
-  padding: 2vw 4.6vw;
-  justify-content: space-between;
+  width: 100%;
+  padding: 0 5vw 0;
 }
 
-.card {
-  width: 10vw;
+.guestbookPreviewText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.2vw;
+  width: 43vw;
+}
+.guestbookPreviewText1{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8vw;
+  width: 100%;
+}
+
+.guestbookTitle {
+  width: 100%;
+}
+
+.guestbookDescription {
+  width: 100%;
+  text-align: justify;
+}
+
+.guestbookLink {
+  color: #222;
+  font-style: italic;
+  text-decoration: underline;
+  transition: color 0.4s ease;
+}
+.guestbookLink:hover {
+  color: #FD229E;
+}
+
+.guestbookReviews {
+  display: flex;
+  flex-direction: column;
+  width: 48vw;
+}
+
+.guestbookReview {
+  display: flex;
+  flex-direction: column;
+}
+
+.guestbookReviewAuthor {
+  display: flex;
+  align-items: center;
+  gap: 0.8vw;
+}
+
+.guestbookAvatar {
+  width: 8vw;
+  aspect-ratio: 120/98;
+  transition: scale 0.4s ease;
+}
+.guestbookAvatar:hover {
+  scale: 1.04;
+}
+
+.guestbookReviewBubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform-origin: center;
+  animation: guestbookBubbleSwing 7s ease-in-out infinite;
+  transition: scale 0.4s ease;
+}
+.guestbookReviewBubble:hover {
+  scale: 1.02;
+}
+
+
+
+@keyframes guestbookBubbleSwing {
+  0%,
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+
+  25% {
+    transform: rotate(0.3deg) translateY(-0.2vw);
+  }
+
+  50% {
+    transform: rotate(0deg) translateY(0.15vw);
+  }
+
+  75% {
+    transform: rotate(-0.3deg) translateY(-0.1vw);
+  }
+}
+
+.guestbookReviewBubble1 {
+  width: 43vw;
+  aspect-ratio: 620 / 169;
+  padding: 0 4vw;
+  background-image: url("../images/reviewBubble.svg");
+}
+
+.guestbookReviewBubble2 {
+  width: 43vw;
+  aspect-ratio: 618 / 190;
+  padding: 0 4vw;
+  background-image: url("../images/reviewBubble1.svg");
+}
+
+.guestbookReviewText {
+  width: 100%;
+  text-align: justify;
+}
+
+
+.moreContentBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8vw;
+  width: 100%;
+  padding: 5vw;
+}
+
+.moreContentImageLink {
+  width: 100%;
+}
+
+.moreContentImage {
+  width: 100%;
   height: auto;
-  background: rgb(255, 224, 246);
-  border-radius: 16px;
-  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+.moreContentImage:hover {
+  transform: scale(1.01);
+}
+
+.moreContentLink {
+  width: fit-content;
+  color: #222;
+  font-style: italic;
+  text-decoration: underline;
+  transition: color 0.4s ease;
+}
+.moreContentLink:hover {
+  color: #FD229E;
+}
+
+
+.souvenirsBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5vw;
+  width: 100%;
+  padding: 12vw 5vw 17vw;
+}
+
+.souvenirsGallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.2vw;
+  width: 42vw;
+}
+
+.souvenirsGallery img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transition: scale 0.4s ease;
+}
+.souvenirsGallery img:hover {
+  scale: 1.04;
+}
+
+.souvenirsTextBlock {
   display: flex;
   flex-direction: column;
-  cursor: pointer;
-  padding: 0.5vw;
-  gap: 1vw;
+  align-items: flex-start;
+  gap: 2.2vw;
+  width: 43vw;
 }
 
-h2{
-  font-size: 1.2vw;
-  font-weight: 300;
-}
-h3{
-  font-size: 2.4vw;
-  font-weight: 400;
-}
-
-.cardd{
-  padding: 2vw 4.6vw;
-}
-
-.purchase{
-  display: flex;
-  flex-direction: row;
-  gap: 10vw;
-  padding: 0 4.6vw;
-}
-
-.cardImg{
-  width: 20vw;
-}
-
-.purchaseText{
+.souvenirsTextBlock1{
   display: flex;
   flex-direction: column;
-  gap: 1vw;
+  align-items: flex-start;
+  gap: 0.8vw;
+  width: 100%;
 }
 
-.buy{
-  margin: 1vw 0;
-  background-color: #ffddeb;
-  padding: 1vw;
-  border-radius: 2vw;
-  cursor: pointer;
+.souvenirsTitle {
+  width: 100%;
 }
 
-.page404{
+.souvenirsDescription {
+  width: 100%;
+  text-align: justify;
+}
+
+.souvenirsLink {
+  color: #222;
+  font-style: italic;
+  text-decoration: underline;
+  transition: color 0.4s ease;
+}
+.souvenirsLink:hover {
+  color: #FD229E;
+}
+
+
+.joinBlock {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 14vw 0;
+  width: 100%;
+  padding: 0 5vw 5vw;
 }
-.error{
-  font-size: 17.7vw;
-  color: #FE5288;
-}
-.p404Text{
+
+.joinBlockText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8vw;
   text-align: center;
 }
 
-.underline{
+.joinBlockTitle {
+  width: 100%;
+}
+
+.joinBlockDescription {
+  width: 100%;
+  font-style: italic;
+}
+
+.joinForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8vw;
+  width: 100%;
+  padding-top: 7vw;
+}
+
+.joinForm input {
+  width: 100%;
+  height: 4.4vw;
+  padding: 0 1.5vw;
+  border: 1px solid #222;
+  background-color: #fff;
+  font-family: inherit;
+  font-size: 1.7vw;
+  font-style: italic;
+  outline: none;
+}
+.joinForm input::placeholder {
+  color: #969696;
+}
+.joinForm input:focus {
+  border-color: #FD229E;
+}
+
+.joinForm button {
+  width: 100%;
+  height: 4.4vw;
+  margin-top: 2.2vw;
+  border: none;
+  background-color: #FD229E;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.7vw;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+.joinForm button:hover {
+  background-color: #FE64A9;
+}
+
+.formSuccessImage {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 2000;
+  width: 60vw;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.formSuccessImage.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 4vw 5vw;
+  margin-top: auto;
+  background-color: #000;
+  color: #fff;
+}
+
+.footerLogo {
+  width: 11vw;
+  height: auto;
+}
+
+.footerText {
+  text-align: right;
+}
+
+/* сверху вся главная----------- */
+
+.afficheHero {
+  position: relative;
+  width: 100%;
+  height: 56vw;
+}
+
+.afficheHeroText {
+  position: absolute;
+  top: 7vw;
+  left: 5vw;
+}
+
+.afficheBubble {
+  position: absolute;
+  transition: transform 0.6s ease;
+}
+
+.afficheBubble img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: scale 0.4s ease;
+}
+
+.afficheBubble:hover img {
+  scale: 1.04;
+}
+
+.afficheBubble1 {
+  width: 30vw;
+  top: 18vw;
+  left: 3vw;
+  animation: afficheBubbleMove1 48s linear infinite;
+}
+
+.afficheBubble2 {
+  width: 30vw;
+  top: 10vw;
+  right: 7vw;
+  animation: afficheBubbleMove2 55s linear infinite;
+}
+
+.afficheBubble3 {
+  width: 30vw;
+  top: 32vw;
+  left: 35vw;
+  animation: afficheBubbleMove3 51s linear infinite;
+}
+
+/* ----------- */
+
+
+.showsTitleText {
+  position: absolute;
+  top: 7vw;
+  left: 5vw;
+  z-index: 10;
+  transition: color 0.4s ease;
+}
+.showsTitleText:hover {
+  color: #FD229E;
+}
+
+.showPage {
+  width: 100%;
+  padding: 7vw 5vw 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8vw;
+  
+}
+
+.showPageBubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30vw;
+  position: relative;
+  left: 7vw;
+  animation: showPageBubbleMove 22s linear infinite;
+}
+
+.showPageBubble img {
+  width: 100%;
+  height: auto;
+  transition: scale 0.5s ease;
+}
+.showPageBubble:hover img {
+  scale: 1.04;
+}
+
+.showPageInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3vw;
+  width: 44vw;
+}
+
+.showPagePoster {
+  width: 21vw;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+.showPagePoster:hover {
+  transform: rotate(1deg) scale(1.02);
+}
+
+.showPageDescription {
+  width: 100%;
+  text-align: justify;
+}
+
+.showPageBuy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 4.4vw;
+  background-color: #FD229E;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.4s ease;
+}
+.showPageBuy:hover {
+  background-color: #FE64A9;
+}
+
+
+/* ----------- */
+
+
+.ticketsPage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8vw;
+  width: 100%;
+  min-height: 54vw;
+  padding: 5vw;
+}
+
+.ticketsImageBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
+}
+
+.ticketsSurok {
+  width: 32vw;
+  height: auto;
+  scale: 1;
+  transform-origin: bottom center;
+  animation: ticketsSurokSwing 5s ease-in-out infinite;
+  transition: scale 0.5s ease;
+}
+
+.ticketsSurok:hover {
+  scale: 1.02;
+}
+
+.ticketsFormBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 44vw;
+}
+
+.ticketsHeading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5vw;
+  margin-bottom: 2.2vw;
+  text-align: center;
+}
+
+.ticketsTitle {
+  width: 100%;
+}
+
+.ticketsSubtitle {
+  width: 100%;
+  font-style: italic;
+}
+
+.ticketsForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8vw;
+  width: 100%;
+}
+
+.ticketsForm input,
+.ticketsForm select {
+  width: 100%;
+  height: 4.2vw;
+  padding: 0 1.2vw;
+  border: 1px solid #222;
+  background-color: #fff;
+  color: #222;
+  font-family: inherit;
+  font-size: 1.7vw;
+  font-style: italic;
+  outline: none;
+}
+
+.ticketsForm input::placeholder {
+  color: #969696;
+}
+
+.ticketsForm input:focus,
+.ticketsForm select:focus {
+  border-color: #FD229E;
+}
+
+.ticketsForm select {
+  color: #969696;
+  cursor: pointer;
+}
+
+.ticketsForm select:valid {
+  color: #222;
+}
+
+.ticketsForm button {
+  width: 100%;
+  height: 4.2vw;
+  margin-top: 1.2vw;
+  border: none;
+  background-color: #FD229E;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.7vw;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.4s ease, scale 0.4s ease;
+}
+
+.ticketsForm button:hover {
+  background-color: #FE64A9;
+}
+
+.ticketsForm button:active {
+  scale: 0.99;
+}
+
+
+
+/* ----------- */
+
+.page404 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+  min-height: 40vw;
+  padding: 5vw 5vw 0;
+  overflow: hidden;
+}
+
+.page404Content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5vw;
+}
+
+.page404MainBubble {
+  display: block;
+  width: 40vw;
+  height: auto;
+  position: relative;
+  left: 6vw;
+  transition: scale 0.5s ease;
+}
+
+.page404MainBubble:hover {
+  scale: 1.04;
+}
+
+.p404Text {
+  text-align: center;
+}
+
+.page404Link {
+  color: #222;
   text-decoration: underline;
+  transition: color 0.4s ease;
+}
+.page404Link:hover {
+  color: #FD229E;
+}
+
+.page404Bubble {
+  position: absolute;
+  display: block;
+  height: auto;
+}
+
+.page404Bubble1 {
+  top: 12vw;
+  left: 14vw;
+  width: 6vw;
+  animation: afficheBubbleMove1 48s linear infinite;
+}
+
+.page404Bubble2 {
+  top: 15vw;
+  right: 20vw;
+  width: 6vw;
+  animation: afficheBubbleMove2 55s linear infinite;
+}
+
+.page404Bubble3 {
+  top: 31vw;
+  left: 20vw;
+  width: 6vw;
+  animation: afficheBubbleMove3 51s linear infinite;
+}
+
+.page404Bubble4 {
+  top: 29vw;
+  right: 12vw;
+  width: 6vw;
+  animation: afficheBubbleMove1 58s linear infinite reverse;
+}
+
+.page404Bubble5 {
+  top: 46vw;
+  left: 64vw;
+  width: 6vw;
+  animation: afficheBubbleMove2 58s linear infinite reverse;
+}
+.page404Bubble:hover {
+  scale: 1.08;
+}
+
+/* ----------- */
+
+.guestbookPage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  gap: 4vw;
+  width: 100%;
+  min-height: 50vw;
+  padding: 8vw 5vw 5vw;
+}
+
+.guestbookFormBlock {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+}
+
+.guestbookFormHeading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5vw;
+  margin-bottom: 2.2vw;
+  text-align: center;
+}
+
+.guestbookFormTitle {
+  width: 100%;
+}
+
+.guestbookFormSubtitle {
+  width: 100%;
+  font-style: italic;
+}
+
+.guestbookForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8vw;
+  width: 100%;
+}
+
+.guestbookForm input,
+.guestbookForm textarea {
+  width: 100%;
+  padding: 0 1.5vw;
+  border: 1px solid #222;
+  background-color: #fff;
+  font-family: inherit;
+  font-size: 1.7vw;
+  font-style: italic;
+  outline: none;
+}
+
+.guestbookForm input {
+  height: 4.4vw;
+}
+
+.guestbookForm textarea {
+  height: 10vw;
+  padding-top: 1.5vw;
+  resize: none;
+}
+
+.guestbookForm input::placeholder,
+.guestbookForm textarea::placeholder {
+  color: #969696;
+}
+
+.guestbookForm input:focus,
+.guestbookForm textarea:focus {
+  border-color: #FD229E;
+}
+
+.guestbookForm button {
+  width: 100%;
+  height: 4.4vw;
+  margin-top: 1.5vw;
+  border: none;
+  background-color: #FD229E;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.7vw;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.4s ease, scale 0.4s ease;
+}
+
+.guestbookForm button:hover {
+  background-color: #FE64A9;
+}
+
+.guestbookForm button:active {
+  scale: 0.99;
+}
+
+.guestbookPageReviews {
+  display: flex;
+  align-items: center;
+  gap: 1.5vw;
+  width: 50vw;
+}
+
+.guestbookPageReviewsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2vw;
+  width: 43vw;
+}
+
+.guestbookPageReviews .guestbookReview {
+  width: 100%;
+}
+
+.guestbookPageReviews .guestbookReviewAuthor {
+  padding-left: 0.5vw;
+}
+
+.guestbookPageReviews .guestbookAvatar {
+  width: 6.5vw;
+}
+
+.guestbookPageReviews .guestbookReviewBubble1,
+.guestbookPageReviews .guestbookReviewBubble2 {
+  width: 43vw;
+}
+
+.guestbookPageReviews .guestbookReviewBubble1 {
+  aspect-ratio: 620 / 169;
+}
+
+.guestbookPageReviews .guestbookReviewBubble2 {
+  aspect-ratio: 618 / 190;
+}
+
+.guestbookSuccessImage {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 3000;
+  width: 60vw;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.guestbookSuccessImage.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+/* ----------- */
+
+.circusPage {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  padding-top: 8vw;
+}
+
+.circusIntro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2vw;
+  width: 100%;
+  padding: 0 4vw 12vw;
+}
+
+.circusIntroImage {
+  width: 50vw;
+  height: auto;
+  transition: scale 0.5s ease;
+}
+
+.circusIntroImage:hover {
+  scale: 1.02;
+}
+
+.circusIntroText {
+  width: 44vw;
+  text-align: justify;
+}
+
+.circusTeam {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 5vw 5vw;
+}
+
+.circusTeamTitle {
+  margin-bottom: 2vw;
+}
+
+.circusTeamGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.2vw;
+  width: 100%;
+}
+.circusTeamCard {
+  height: 36vw;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.circusTeamCardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}
+
+.circusTeamCard.flipped .circusTeamCardInner {
+  transform: rotateY(180deg);
+}
+
+.circusTeamCardFront,
+.circusTeamCardBack {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #222;
+  background-color: #fff;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.circusTeamCardFront {
+  justify-content: flex-start;
+}
+
+.circusTeamCardBack {
+  justify-content: center;
+  gap: 3vw;
+  padding: 1vw;
+  transform: rotateY(180deg);
+}
+
+.circusTeamName {
+  margin-top: 0.8vw;
+  text-align: center;
+}
+
+.circusTeamDescription {
+  margin-top: 0.5vw;
+  padding: 0 1vw;
+  font-style: italic;
+  text-align: center;
+}
+
+.circusTeamImage {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  margin-top: 1vw;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.circusTeamBuyText {
+  text-align: center;
+  font-style: italic;
+}
+
+.circusTeamBuyButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 4.4vw;
+  background-color: #FD229E;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.4s ease;
+}
+.circusTeamBuyButton:hover {
+  background-color: #FE64A9;
+}
+
+
+/* ----------- */
+
+.childrenPage {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  padding: 7vw 5vw 6vw;
+}
+
+.childrenTitle {
+  margin-bottom: 2.2vw;
+}
+
+.childrenProjects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4vw;
+  width: 100%;
+}
+
+.childrenProject {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.childrenProjectImageLink {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.childrenProjectImage {
+  display: block;
+  width: 100%;
+  height: 34vw;
+  object-fit: cover;
+  transition: scale 0.5s ease;
+}
+
+.childrenProjectImageLink:hover .childrenProjectImage {
+  scale: 1.02;
+}
+
+.childrenProjectDescription {
+  margin-top: 0.8vw;
+}
+
+.childrenProjectLink,
+.childrenBookLink {
+  margin-top: 1.2vw;
+  color: #222;
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+
+.childrenProjectLink:hover,
+.childrenBookLink:hover {
+  color: #FD229E;
+}
+
+.childrenBook {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 4vw;
+}
+
+.childrenBookDescription {
+  font-style: italic;
+}
+
+/* ----------- */
+
+.souvenirsPage {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  padding: 7vw 5vw 6vw;
+}
+
+.souvenirsPageTitle {
+  margin-bottom: 3.5vw;
+}
+
+.souvenirsCatalog {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3vw 3vw;
+  width: 100%;
+}
+
+.souvenirCard {
+  display: flex;
+  flex-direction: column;
+  color: #222;
+  text-decoration: none;
+}
+
+.souvenirCardImage {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  transition: scale 0.5s ease;
+}
+
+.souvenirCardInfo {
+  display: flex;
+  justify-content: space-between;
+  gap: 1vw;
+  width: 100%;
+  padding-top: 1vw;
+}
+.souvenirCard:hover .souvenirCardImage {
+  scale: 1.02;
+}
+.souvenirCard:hover .souvenirCardInfo {
+  color: #FD229E;
+}
+
+.souvenirCardInfo {
+  transition: color 0.4s ease;
+}
+
+/* ----------- */
+
+.souvenirProductPage {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  padding: 5vw;
+}
+
+.souvenirBack {
+  width: fit-content;
+  color: #222;
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+
+.souvenirBack:hover {
+  color: #FD229E;
+}
+
+.souvenirProductContent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 7vw;
+  width: 100%;
+  padding-top: 2.5vw;
+}
+
+.souvenirProductMain {
+  display: flex;
+  align-items: flex-start;
+  gap: 2vw;
+  width: 60vw;
+}
+
+.souvenirProductImage {
+  display: block;
+  width: 34vw;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transition: scale 0.5s ease;
+}
+
+.souvenirProductImage:hover {
+  scale: 1.02;
+}
+
+.souvenirProductInfo {
+  display: flex;
+  flex-direction: column;
+  width: 22vw;
+  min-height: 34vw;
+}
+
+.souvenirProductName {
+  width: 100%;
+}
+
+.souvenirProductPrice {
+  width: 100%;
+  margin-top: 0.5vw;
+}
+
+.souvenirProductBuy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 4.4vw;
+  margin-top: auto;
+  background-color: #FD229E;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.4s ease;
+}
+
+.souvenirProductBuy:hover {
+  background-color: #FE64A9;
+}
+
+.souvenirProductMore {
+  display: flex;
+  flex-direction: column;
+  width: 34vw;
+}
+
+.souvenirProductMoreTitle {
+  text-align: right;
+}
+
+.souvenirProductMoreList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3vw;
+  width: 100%;
+  padding-top: 2.2vw;
+}
+
+.souvenirProductMoreCard {
+  display: flex;
+  flex-direction: column;
+  color: #222;
+  text-decoration: none;
+}
+
+.souvenirProductMoreImage {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transition: scale 0.4s ease;
+}
+
+.souvenirProductMoreCard:hover .souvenirProductMoreImage {
+  scale: 1.03;
+}
+
+.souvenirProductMoreName {
+  margin-top: 1vw;
+  transition: color 0.4s ease;
+}
+
+.souvenirProductMorePrice {
+  margin-top: 0.5vw;
+  transition: color 0.4s ease;
+}
+
+.souvenirProductMoreCard:hover .souvenirProductMoreName,
+.souvenirProductMoreCard:hover .souvenirProductMorePrice {
+  color: #FD229E;
+}
+
+.souvenirChildrenLink {
+  width: fit-content;
+  margin-top: 5vw;
+  color: #222;
+  text-decoration: underline;
+  transition: color 0.4s ease;
+}
+
+.souvenirChildrenLink:hover {
+  color: #FD229E;
+}
+
+/* ----------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.backgroundCircles{
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.backgroundCircle{
+  position: absolute;
+  width: 20vw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #FD229E;
+  filter: blur(140px);
+}
+
+.backgroundCircle1{
+  top: 5%;
+  left: 4%;
+  animation: circleMovement1 60s linear infinite;
+}
+
+.backgroundCircle2{
+  top: 35%;
+  left: 68%;
+  animation: circleMovement2 60s linear infinite;
+}
+
+.backgroundCircle3{
+  top: 72%;
+  left: 28%;
+  animation: circleMovement3 60s linear infinite;
 }

@@ -8,10 +8,16 @@
     <script src="javascripts/scripts.js" defer></script>
 </head>
 <body>
+    <div class="backgroundCircles">
+        <div class="backgroundCircle backgroundCircle1"></div>
+        <div class="backgroundCircle backgroundCircle2"></div>
+        <div class="backgroundCircle backgroundCircle3"></div>
+    </div>
+
     <div id="burger"></div>
 
     <nav class="mainMenu">
-      <a class="mainMenuLink" href="index.html">Афиша</a>
+      <a class="mainMenuLink" href="affiche.html">Афиша</a>
       <a class="mainMenuLink" href="tickets.html">Билеты</a>
       <a class="mainMenuLink" href="guestbook.html">Гостевая книга</a>
       <a href="index.html"><img src="images/kirwood.svg" alt=""></a>
@@ -20,45 +26,67 @@
       <a class="mainMenuLink active" href="souvenirs.html">Сувениры</a>
     </nav>
     
-    <h1>Сувениры</h1>
+    <main class="souvenirsPage">
+        <div class="souvenirsPageTitle h2">Каталог</div>
+        <div class="souvenirsCatalog">
 
-    <div class="cards">
-        <a href="card.html" class="card">
-            <img src="images/IMG_3643-Photoroom.png" alt="">
-            <h2>Карточка</h2>
-            <h3>12₽</h3>
-        </a>
+            <a class="souvenirCard" href="mug.html">
+                <img class="souvenirCardImage" src="images/souvenir1.png" alt="">
+                <div class="souvenirCardInfo h4">
+                    <div>Кружка</div>
+                    <div>420р.</div>
+                </div>
+            </a>
 
-         <a href="card.html" class="card">
-            <img src="images/IMG_3643-Photoroom.png" alt="">
-            <h2>Карточка</h2>
-            <h3>12₽</h3>
-        </a>
+            <a class="souvenirCard" href="socks.html">
+                <img class="souvenirCardImage" src="images/souvenir2.png" alt="">
+                <div class="souvenirCardInfo h4">
+                    <div>Носки</div>
+                    <div>340р.</div>
+                </div>
+            </a>
 
-         <a href="card.html" class="card">
-            <img src="images/IMG_3643-Photoroom.png" alt="">
-            <h2>Карточка</h2>
-            <h3>12₽</h3>
-        </a>
+            <a class="souvenirCard" href="case.html">
+                <img class="souvenirCardImage" src="images/souvenir3.png" alt="">
+                <div class="souvenirCardInfo h4">
+                    <div>Чехол для телефона</div>
+                    <div>1200р.</div>
+                </div>
+            </a>
 
-         <a href="card.html" class="card">
-            <img src="images/IMG_3643-Photoroom.png" alt="">
-            <h2>Карточка</h2>
-            <h3>12₽</h3>
-        </a>
+            <a class="souvenirCard" href="bracelets.html">
+                <img class="souvenirCardImage" src="images/souvenir4.png" alt="">
+                <div class="souvenirCardInfo h4">
+                    <div>Браслеты</div>
+                    <div>190р.</div>
+                </div>
+            </a>
 
-         <a href="card.html" class="card">
-            <img src="images/IMG_3643-Photoroom.png" alt="">
-            <h2>Карточка</h2>
-            <h3>12₽</h3>
-        </a>
+            <a class="souvenirCard" href="badges.html">
+                <img class="souvenirCardImage" src="images/souvenir5.png" alt="">
+                <div class="souvenirCardInfo h4">
+                    <div>Значки</div>
+                    <div>250р.</div>
+                </div>
+            </a>
 
-         <a href="card.html" class="card">
-            <img src="images/IMG_3643-Photoroom.png" alt="">
-            <h2>Карточка</h2>
-            <h3>12₽</h3>
-        </a>
-        
-    </div>
+            <a class="souvenirCard" href="surok.html">
+                <img class="souvenirCardImage" src="images/souvenir6.png" alt="">
+                <div class="souvenirCardInfo h4">
+                    <div>Значок сурок</div>
+                    <div>370р.</div>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <footer>
+        <img class="footerLogo" src="images/kirwoodWhite.svg" alt="Кирвуд">
+        <div class="footerText h4">
+            <div>Автор: Асанова Дарья</div>
+            <div>Кураторы: Рихтер Камила, Комкова Анна</div>
+        </div>
+    </footer>
 </body>
 </html>
